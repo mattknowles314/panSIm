@@ -19,9 +19,9 @@ R0 = 0 #Initial number of removed people
 S0 = N-I0-R0 #Susceptible population initially
 
 #Virus Stats:
-b = 0.4 #Rate of infection
-c = 0.2 #Rate of recovery
-per = 150 #Infection period 
+b = 0.2#Rate of infection
+c = 1./10 #Rate of recovery
+per = 240 #Infection period 
 
 
 #Now we can make the model using the SIR equations 
