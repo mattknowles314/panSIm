@@ -25,11 +25,6 @@ c = 0.2
 def succ(S,I,R,B,c):
         dSdt = -1*B*S*I
         return dSdt
-#def infec(S,I,R,B,c):
-    #Temp
-
-#def rem(S,I,B,R,c):
-    #Temp
 
 t = np.linspace(0,20)
 S = odeint(succ, 100, t)
