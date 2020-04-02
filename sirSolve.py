@@ -13,14 +13,14 @@ from scipy.integrate import odeint
 
 #First we have the parameters for the model, these will be imported from the GUI 
 #Pop Stats:
-N = 5000 #This is the size of the population
-I0 = 1 #Initial number of infected people
+N = 4000 #This is the size of the population
+I0 = 93 #Initial number of infected people
 R0 = 0 #Initial number of removed people
 S0 = N-I0-R0 #Susceptible population initially
 
 #Virus Stats:
-b = 0.4 #Rate of infection
-c = 1./10 #Rate of recovery
+b = 0.2 #Rate of infection
+c = 0.07 #Rate of recovery
 per = 500 #Infection period 
 
 
