@@ -11,6 +11,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from scipy.integrate import odeint
 
+
 #First we have the parameters for the model, these will be imported from the GUI 
 #Pop Stats:
 N = 4000 #This is the size of the population
@@ -36,10 +37,7 @@ def sireqs(y,t,N,b,c):
 
 #Because in sireqs we gave v=S,I,R as a vector, we do so for initial conditions
 y0 = S0,I0,R0 #Initial conditions we gave earlier but as a vector
-sirInt = odeint(sireqs, y0,t,args=(N,b,c))
-S,I,R = sirInt.T
-
-
+S,I,R = odeint(sireqs, y0,t,args=(N,b,c)).T
 
 plt.plot(t,S/1000, 'b', alpha=0.5, lw=2,label = 'Susceptible')
 plt.plot(t,I/1000, 'r', alpha=0.5, lw=2,label = 'Infected') 
@@ -49,8 +47,8 @@ plt.ylabel('Number of each parameter /1000s')
 legend =plt.legend()
 
 
-
-plt.show()
+plt.savefig("figs/plot.png")
+#plt.show() This could be used to display the graph
 
 
 
