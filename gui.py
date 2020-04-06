@@ -1,5 +1,5 @@
 from tkinter import *
-#import sirSolve
+import sirSolve
 
 root=Tk()
 
@@ -16,13 +16,16 @@ remLabel = Label(root, text="Recovery Rate").grid(row =3)
 timeLabel = Label(root, text = "Time Period").grid(row=4)
 ininfLabel = Label(root, text = "Initial Infections").grid(row=5)
 
-
-
-popEnt = Entry(root).grid(row=1, column=1)
-infEnt = Entry(root).grid(row=2, column=1)
-remEnt = Entry(root).grid(row=3, column=1)
-timeEnt = Entry(root).grid(row=4, column=1)
-i0Ent = Entry(root).grid(row=5, column=1)
+popEnt = Entry(root)
+popEnt.grid(row =1, column=1)
+infEnt = Entry(root)
+infEnt.grid(row=2, column=1)
+remEnt = Entry(root)
+remEnt.grid(row=3, column=1)
+timeEnt = Entry(root)
+timeEnt.grid(row=4, column=1)
+i0Ent = Entry(root)
+i0Ent.grid(row=5, column=1)
 
 def getVals():
     N = popEnt.get()
@@ -31,6 +34,12 @@ def getVals():
     per = timeEnt.get()
     I0 = i0Ent.get()
 
+    global values
+    values = [N,b,c,per,I0]
+
 subButton = Button(root, text= "Generate", command=getVals).grid(row=6, column=1, sticky=W)
+
+sirSolve.sireqs
+
 
 root.mainloop()
